@@ -11,7 +11,7 @@ const RegistrationForm = ({ onSubmitSuccess, initialData = {}, editMode = false 
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // Reset error when switching between Create and Edit mode
+    // Reseting error when switcihng between Create and Edit mode
     setError("");
   }, [editMode]);
 
@@ -22,7 +22,7 @@ const RegistrationForm = ({ onSubmitSuccess, initialData = {}, editMode = false 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Reset error on every submit
+    // Reseting error on every submit
     setError("");
 
     // Validation
@@ -42,7 +42,7 @@ const RegistrationForm = ({ onSubmitSuccess, initialData = {}, editMode = false 
         await apiService.createRegistration(formData);
       }
       onSubmitSuccess();
-      // Reset the form after successful submission
+      // Reseting the form after successfull submission
       setFormData({
         Name: "",
         Email: "",
