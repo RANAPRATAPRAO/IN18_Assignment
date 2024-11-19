@@ -13,11 +13,11 @@ Coding Assignment for IN18 Labs
 This project contains both the backend and frontend, with the following folder structure:
 
 
-('''
+'''
 /root-folder
   /backend
   /frontend
-  )
+  '''
 Follow these steps to clone and run both parts of the project locally:
 
 Step 1: Clone the Repository
