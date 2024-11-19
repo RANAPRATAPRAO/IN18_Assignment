@@ -10,10 +10,16 @@ const RegistrationForm = ({ onSubmitSuccess, initialData = {}, editMode = false 
   });
   const [error, setError] = useState("");
 
+  // This effect is triggere whenever the editmode changes
   useEffect(() => {
-    // Reseting error when switcihng between Create and Edit mode
-    setError("");
-  }, [editMode]);
+    setFormData({
+      Name: initialData.Name || "",
+      Email: initialData.Email || "",
+      DateOfBirth: initialData.DateOfBirth || "",
+      PhoneNumber: initialData.PhoneNumber || "",
+    });
+    setError(""); // Reset error whenever editdata changes
+  }, [initialData]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,9 +27,8 @@ const RegistrationForm = ({ onSubmitSuccess, initialData = {}, editMode = false 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Reseting error on every submit
-    setError("");
+
+    setError(""); // Reseting error on every submit
 
     // Validation
     if (!/^[a-zA-Z\s]*$/.test(formData.Name)) {
@@ -37,12 +42,13 @@ const RegistrationForm = ({ onSubmitSuccess, initialData = {}, editMode = false 
 
     try {
       if (editMode) {
+        // Updataaing existing registration
         await apiService.updateRegistration(initialData.ID, formData);
       } else {
+        // Creating a new registration
         await apiService.createRegistration(formData);
       }
       onSubmitSuccess();
-      // Reseting the form after successfull submission
       setFormData({
         Name: "",
         Email: "",
