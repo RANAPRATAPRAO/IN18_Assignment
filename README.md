@@ -8,6 +8,8 @@ Coding Assignment for IN18 Labs
 2. NPM (Node Package Manager) comes with Node.js, so it will be installed automatically with Node.js.
 
 3. Git (optional, for cloning the repositories).
+   
+4.MySQL 
 
 # Project Setup Instructions
 
