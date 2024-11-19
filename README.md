@@ -22,7 +22,9 @@ This project contains both the backend and frontend, with the following folder s
 # Step 1: Clone the Repository
 
 First, clone the repository to your local machine using the following command:
-```git clone https://github.com/RANAPRATAPRAO/IN18_Assignment.git```
+```
+git clone https://github.com/RANAPRATAPRAO/IN18_Assignment.git
+```
 This will clone the entire project, including both the backend and frontend directories.
 
 # Step 2: Set Up the Backend
